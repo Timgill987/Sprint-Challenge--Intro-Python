@@ -4,11 +4,8 @@
 # object is constructed.
 
 class GroundVehicle():
-    def __init__(self, num_wheels = None):
+    def __init__(self, num_wheels = 4):
         self.num_wheels = num_wheels
-        if num_wheels == None:
-            self.num_wheels = 4
-
     def drive(self):
         return 'vroooom'
     # TODO

@@ -24,11 +24,11 @@ cities = []
 
 def cityreader(cities=[]):
   import csv
-  with open('src/cityreader/cities.csv', newline='') as csvfile:
+  with open('src/cityreader/cities.csv', newline='') as csvfile: # Function reads the cities csv file and displays each entry on a new line
     reader = csv.DictReader(csvfile)
     for row in reader:
-      city = City(row['city'].strip(), float(row['lat']), float(row['lng']))
-      cities.append(city)
+      city = City(row['city'].strip(), float(row['lat']), float(row['lng'])) #using the float method as the lat and lon are numbers, not strings.
+      cities.append(city) #fills the cities list with csv entries after running through the function.
 
 
   # TODO Implement the functionality to read from the 'cities.csv' file
