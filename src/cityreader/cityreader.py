@@ -21,10 +21,10 @@ class City:
 # Note that the first line of the CSV is header that describes the fields--this
 # should not be loaded into a City object.
 cities = []
+import csv
 
 def cityreader(cities=[]):
-  import csv
-  with open('src/cityreader/cities.csv', newline='') as csvfile: # Function reads the cities csv file and displays each entry on a new line
+  with open('src/cityreader/cities.csv') as csvfile: # Function reads the cities csv file and displays each entry on a new line
     reader = csv.DictReader(csvfile)
     for row in reader:
       city = City(row['city'].strip(), float(row['lat']), float(row['lng'])) #using the float method as the lat and lon are numbers, not strings.
